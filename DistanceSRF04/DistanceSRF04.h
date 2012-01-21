@@ -1,6 +1,6 @@
 /************************************************************************************************************
  * DistanceSRF04.h - Arduino library for retrieving data from the SRF04 Distance sensor                     *
- * Copyright 2011 Jeroen Doggen (jeroendoggen@gmail.com)                                                    *
+ * Copyright 2011-2012 Jeroen Doggen (jeroendoggen@gmail.com)                                               *
  * More info: http://www.robot-electronics.co.uk/files/SRF04.pde                                            *
  ************************************************************************************************************
  * Version History:                                                                                         *
@@ -27,7 +27,13 @@
 
 #ifndef DistanceSRF04_h
 #define DistanceSRF04_h
-#include <Arduino.h>
+
+#if defined(ARDUINO) && ARDUINO >= 100
+  #include "Arduino.h"
+#else
+  #include "WProgram.h"
+  #include <pins_arduino.h>
+#endif
 
 class DistanceSRF04
 {
